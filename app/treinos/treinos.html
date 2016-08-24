@@ -1,0 +1,34 @@
+<div ng-controller="TreinosCtrl" class="mdl-cell mdl-cell--6-col">
+	<div class="mdl-card mdl-shadow--2dp">
+	  <div class="mdl-card__title">
+	    <h2 class="mdl-card__title-text">Cadastrar Treino</h2>
+	  </div>
+	  <div class="mdl-card__supporting-text">
+	   
+	   <form ng-submit="addTreino()">
+		  <div class="mdl-textfield mdl-js-textfield">
+		    <input class="mdl-textfield__input" ng-model="nome" type="text" id="sample1">
+		    <label class="mdl-textfield__label" for="sample1">Nome do Treino</label>
+		  </div>
+
+		  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+		  	Salvar
+		  </button>
+		</form>
+
+	  </div>
+	</div>
+
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+	  <thead>
+	    <tr>
+	      <th>Treino</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="treino in treinos">
+	      <td>{{treino.nome}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>

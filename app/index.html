@@ -28,7 +28,7 @@
 
     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
       <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-        <a class="mdl-navigation__link" href="">
+        <a class="mdl-navigation__link" href="#!/treinos">
           <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">note_add</i>
           Cadastrar Treino</a>
         <a class="mdl-navigation__link" href="">
@@ -37,7 +37,11 @@
       </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-      <div ng-view></div>
+      <div class="mdl-grid">
+
+        <div ng-view></div>
+
+      </div>
     </main>
 
   </div>
@@ -61,7 +65,7 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/material-design-lite/material.min.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
+  <script src="treinos/treinos.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
