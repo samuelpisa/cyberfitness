@@ -1,34 +1,88 @@
 <div ng-controller="TreinosCtrl" class="mdl-cell mdl-cell--6-col">
-	<div class="mdl-card mdl-shadow--2dp">
-	  <div class="mdl-card__title">
-	    <h2 class="mdl-card__title-text">Cadastrar Treino</h2>
-	  </div>
-	  <div class="mdl-card__supporting-text">
-	   
-	   <form ng-submit="addTreino()">
-		  <div class="mdl-textfield mdl-js-textfield">
-		    <input class="mdl-textfield__input" ng-model="nome" type="text" id="sample1">
-		    <label class="mdl-textfield__label" for="sample1">Nome do Treino</label>
+	<div ng-show="formTreino">
+		<div class="mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text">Cadastrar Treino</h2>
+
 		  </div>
+		  <div class="mdl-card__supporting-text">
+		   
+		   <form ng-submit="addTreino()">
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" ng-model="treino.nome" type="text" id="sample1">
+			    <label class="mdl-textfield__label" for="sample1">Nome do Treino</label>
+			  </div>
 
-		  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-		  	Salvar
-		  </button>
-		</form>
+			  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			  	Salvar
+			  </button>
+			</form>
 
-	  </div>
+		  </div>
+		</div>
+
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		  <thead>
+		    <tr>
+		      <th>Aparelho</th>
+		      <th>Série</th>
+		      <th>Repet.</th>
+		      <th>Carga</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="aparelho in treino.aparelhos">
+		      <td>{{aparelho.nome}}</td>
+		      <td>{{aparelho.serie}}</td>
+		      <td>{{aparelho.repeticao}}</td>
+		      <td>{{aparelho.carga}}</td>
+		      <td><a ng-click="removeAparelho(aparelho)"><i class="material-icons">clear</i> </a></td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+		ng-click="formAparelho()">
+	  		<i class="material-icons">add</i>
+		</a>
 	</div>
+	<div ng-show="!formTreino">
 
-	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-	  <thead>
-	    <tr>
-	      <th>Treino</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr ng-repeat="treino in treinos">
-	      <td>{{treino.nome}}</td>
-	    </tr>
-	  </tbody>
-	</table>
+		<div class="mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text">Adicionar Aparelho</h2>
+
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		   
+		   <form ng-submit="addAparelho()">
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" ng-model="aparelho" type="text" id="aparelho">
+			    <label class="mdl-textfield__label" for="aparelho">Aparelho</label>
+			  </div>
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" ng-model="serie" type="text" id="serie">
+			    <label class="mdl-textfield__label" for="serie">Série</label>
+
+			  </div>
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" ng-model="repeticao" type="text" id="repet">
+			    <label class="mdl-textfield__label" for="repet">Repetição</label>
+			  </div>
+
+			  <div class="mdl-textfield mdl-js-textfield">
+			    <input class="mdl-textfield__input" ng-model="carga" type="text" id="carga">
+			    <label class="mdl-textfield__label" for="carga">Carga</label>
+			  </div>
+
+			  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+			  	Salvar
+			  </button>
+			</form>
+
+		  </div>
+		</div>
+
+	</div>
 </div>
