@@ -1,0 +1,23 @@
+<div ng-controller="TreinarCtrl" class="mdl-cell mdl-cell--6-col">
+	<div ng-show="formTreinar">
+		
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+	  <thead>
+	    <tr>
+	      <th>Treinos</th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="t in treinos">
+		      <td>{{t.nome}}</td>
+		      <td><button ng-click="removeAparelho(aparelho)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+				  	<i class="material-icons">send</i>
+				  </button>
+			  </td>
+		</tr>
+	  </tbody>
+	</table>
+
+	</div>
+</div>

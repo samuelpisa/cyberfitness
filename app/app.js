@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.treinos',
-  'myApp.view2'
+  'myApp.treinar'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

@@ -31,7 +31,7 @@ angular.module('myApp.treinos', ['ngRoute'])
 
     	var newKey = firebase.database().ref().child('treinos').push().key;
 
-    	firebase.database().ref('treinos/' + newKey).set($scope.treino);
+    	firebase.database().ref('treinos/' + $scope.treino.nome).set($scope.treino);
 
     	//firebase.database().ref().child(newKey).set($scope.treino.aparelhos);
 
