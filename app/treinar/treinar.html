@@ -1,7 +1,7 @@
 <div ng-controller="TreinarCtrl" class="mdl-cell mdl-cell--6-col">
 	<div ng-show="formTreinar">
 		
-	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 385px;">
 	  <thead>
 	    <tr>
 	      <th>Treinos</th>
@@ -10,14 +10,34 @@
 	  </thead>
 	  <tbody>
 	    <tr ng-repeat="t in treinos">
-		      <td>{{t.nome}}</td>
-		      <td><button ng-click="removeAparelho(aparelho)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-				  	<i class="material-icons">send</i>
-				  </button>
-			  </td>
+	      <td>{{t.nome}}</td>
+	      <td><button ng-click="iniciarTreino(t)" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+			  	<i class="material-icons">send</i>
+			  </button>
+		  </td>
 		</tr>
 	  </tbody>
 	</table>
+
+	</div>
+
+	<div ng-show="!formTreinar">
+	<div ng-repeat="aparelho in treinoSelect.aparelhos"
+	class="mdl-card mdl-shadow--2dp" style="width: 385px;margin-bottom: 15px;">
+	  <div class="mdl-card__title">
+	  	{{aparelho.nome}}
+	  </div>
+	  <div class="mdl-card__supporting-text">
+	  	<p><b>Série</b> {{aparelho.serie}} x {{aparelho.repeticao}}
+	  	<br/>
+	  	<b>Carga</b> {{aparelho.carga}}</p>
+
+	  	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab 	mdl-button--colored" style="margin: 0 45%;" onclick="this.style.background = '#48b04b'">
+			  	<i class="material-icons">done</i>
+		  </button>
+	  </div>
+
+	</div>
 
 	</div>
 </div>

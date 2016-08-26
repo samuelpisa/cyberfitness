@@ -12,10 +12,17 @@ angular.module('myApp.treinar', ['ngRoute'])
 .controller('TreinarCtrl', ['$scope', function($scope) {
 
 	$scope.formTreinar = true;
+	$scope.treinoSelect = '';
 
 	firebase.database().ref('treinos/').on('value', function(snapshot) {
-		console.log(snapshot.val());
 		$scope.treinos = snapshot.val();
 	});
+
+
+	$scope.iniciarTreino = function(treino) {
+
+		$scope.formTreinar = false;
+    	$scope.treinoSelect = treino;
+    };
 
 }]);
